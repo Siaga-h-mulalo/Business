@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Kings Atchar | Cart · Receipt & Share</title>
+    <title>Kings Atchar | Cart · Pay · Feedback</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -83,6 +83,7 @@
         .btn-outline { background: transparent; border: 2px solid var(--royal-gold); color: var(--deep-brown); }
         .btn-outline:hover { background: var(--royal-gold); color: white; }
         .btn-sm { padding: 8px 16px; font-size: 0.8rem; }
+        .btn-gold { background: var(--royal-gold); color: var(--deep-brown); font-weight: 800; }
 
         .navbar {
             position: fixed; top: 0; width: 100%; z-index: 1000;
@@ -127,29 +128,33 @@
         .pill.active { background: var(--royal-gold); color: white; }
         .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 12px; flex-wrap: wrap; }
         .price-tag { font-size: 1.5rem; font-weight: 800; color: var(--deep-brown); font-family: var(--font-head); }
-        .btn-cart { background: var(--royal-gold); color: var(--deep-brown); padding: 10px 20px; }
         .contact-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); }
         .contact-info { background: var(--deep-brown); color: white; padding: 50px; }
         .contact-form { padding: 50px; background: white; }
-        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
-        .contact-icon { width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--soft-gold); }
         .form-group { margin-bottom: 18px; }
         .form-input { width: 100%; padding: 14px 16px; border: 1.5px solid #EAE2D7; border-radius: 16px; font-family: inherit; background: #FEFCF8; }
         .form-input:focus { border-color: var(--royal-gold); outline: none; box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15); }
         .modal-cart { position: fixed; inset: 0; background: rgba(62, 39, 35, 0.8); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
         .modal-cart.active { display: flex; }
-        .cart-content { background: white; width: 100%; max-width: 700px; max-height: 85vh; border-radius: 32px; display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--shadow-lg); }
+        .cart-content { background: white; width: 100%; max-width: 750px; max-height: 85vh; border-radius: 32px; display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--shadow-lg); }
         .cart-header { padding: 20px 28px; border-bottom: 1px solid #f0e3d4; display: flex; justify-content: space-between; align-items: center; }
         .cart-header h3 { font-family: var(--font-head); font-size: 1.7rem; }
         .cart-items { flex: 1; overflow-y: auto; padding: 20px 28px; background: #FEFCF8; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #ece2d6; flex-wrap: wrap; gap: 12px; }
         .item-details { flex: 2; min-width: 150px; }
         .item-name { font-weight: 800; color: var(--deep-brown); }
-        .item-actions { display: flex; align-items: center; gap: 12px; }
         .qty-control { display: flex; align-items: center; gap: 8px; background: #F1ECE5; padding: 4px 10px; border-radius: 60px; }
         .qty-control button { background: none; border: none; font-weight: bold; font-size: 1.2rem; cursor: pointer; padding: 0 6px; color: var(--deep-brown); }
         .cart-footer { padding: 20px 28px; border-top: 2px solid #eadbcb; background: white; border-radius: 0 0 32px 32px; }
         .cart-total { display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; font-family: var(--font-head); }
+        .payment-method-group { background: #FEF8F0; padding: 16px; border-radius: 20px; margin: 15px 0; }
+        .payment-title { font-weight: 700; margin-bottom: 10px; color: var(--deep-brown); display: flex; align-items: center; gap: 8px; }
+        .radio-group { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px; }
+        .radio-group label { display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; }
+        .star-rating { display: flex; gap: 10px; justify-content: center; margin: 15px 0; }
+        .star { font-size: 2rem; cursor: pointer; color: #ddd; transition: 0.2s; }
+        .star.active, .star:hover { color: var(--royal-gold); text-shadow: 0 0 3px rgba(0,0,0,0.2); }
+        .feedback-area { background: #FDF8EF; padding: 18px; border-radius: 24px; margin-top: 18px; }
         .receipt-actions { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
         #customAlert { position: fixed; top: 24px; left: 50%; transform: translateX(-50%) translateY(-20px); background: var(--deep-brown); color: white; border-left: 5px solid var(--royal-gold); padding: 14px 28px; border-radius: 60px; z-index: 3000; display: none; font-weight: 600; backdrop-filter: blur(8px); }
         @media (max-width: 768px) { .nav-links { display: none; } .contact-wrap { grid-template-columns: 1fr; } .hero { padding-top: 120px; } }
@@ -159,19 +164,62 @@
     <div id="customAlert">✨ Added to cart</div>
     <nav class="navbar"><div class="container nav-content"><a href="#" class="logo">Kings<span>Atchar</span></a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#flavors">Flavors</a></li><li><a href="#contact">Contact</a></li></ul><div style="display: flex; gap: 15px;"><div class="cart-icon-wrapper" id="cartIconBtn"><i class="fas fa-shopping-bag" style="font-size: 1.3rem;"></i><span class="cart-count" id="cartCountBadge">0</span></div><a href="tel:0665424390" class="btn btn-outline btn-sm"><i class="fas fa-phone"></i> Call</a></div></div></nav>
 
-    <section id="home" class="hero"><div class="container hero-content"><div class="hero-tags"><span class="tag"><i class="fas fa-crown"></i> King of Crunch</span><span class="tag"><i class="fas fa-certificate"></i> 100% Homemade</span><span class="tag"><i class="fas fa-truck"></i> Fast Delivery</span></div><h1 class="title-lg">Real Mango. Real Spice.<br><span>Royal Taste.</span></h1><p style="margin-bottom: 35px;">Handcrafted in Venda. Add to cart, get a receipt – download & share!</p><div class="hero-actions" style="display: flex; gap: 15px; justify-content: center;"><a href="#flavors" class="btn btn-primary"><i class="fas fa-utensils"></i> Explore Menu</a><a href="https://wa.me/27617250769" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a></div></div></section>
+    <section id="home" class="hero"><div class="container hero-content"><div class="hero-tags"><span class="tag"><i class="fas fa-crown"></i> King of Crunch</span><span class="tag"><i class="fas fa-certificate"></i> 100% Homemade</span><span class="tag"><i class="fas fa-truck"></i> Fast Delivery</span></div><h1 class="title-lg">Real Mango. Real Spice.<br><span>Royal Taste.</span></h1><p style="margin-bottom: 35px;">Handcrafted in Venda. Add to cart, pay securely, and share your royal receipt!</p><div class="hero-actions" style="display: flex; gap: 15px; justify-content: center;"><a href="#flavors" class="btn btn-primary"><i class="fas fa-utensils"></i> Explore Menu</a><a href="https://wa.me/27617250769" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a></div></div></section>
 
     <section id="flavors" class="section"><div class="container"><div style="text-align: center; margin-bottom: 50px;"><span class="title-sm">Freshly Bottled</span><h2 class="title-lg">Our <span>Signature</span> Lineup</h2></div><div class="flavor-grid"><div class="flavor-card" data-flavor-name="Garlic King"><div class="flavor-img"><img src="Garlic.jpeg" alt="Garlic" loading="lazy"><span class="flavor-badge"><i class="fas fa-heart"></i> Best Seller</span></div><div class="flavor-info"><h3>Garlic King</h3><p>Roasted garlic & crisp mango.</p><div class="size-pills"><div class="pill active" data-price="15">Small</div><div class="pill" data-price="30">Medium</div><div class="pill" data-price="50">Large</div></div><div class="card-footer"><span class="price-tag">R15</span><button class="btn btn-primary btn-cart add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div></div><div class="flavor-card" data-flavor-name="Fire Chilli"><div class="flavor-img"><img src="Chilli.jpeg" alt="Chilli" loading="lazy"><span class="flavor-badge"><i class="fas fa-pepper-hot"></i> Extra Hot</span></div><div class="flavor-info"><h3>Fire Chilli</h3><p>Bold, spicy, fiery kick.</p><div class="size-pills"><div class="pill active" data-price="15">Small</div><div class="pill" data-price="30">Medium</div><div class="pill" data-price="50">Large</div></div><div class="card-footer"><span class="price-tag">R15</span><button class="btn btn-primary btn-cart add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div></div><div class="flavor-card" data-flavor-name="Royal Classic"><div class="flavor-img"><img src="Neutral.jpeg" alt="Classic" loading="lazy"><span class="flavor-badge"><i class="fas fa-sun"></i> Pure Classic</span></div><div class="flavor-info"><h3>Royal Classic</h3><p>Traditional Venda spices.</p><div class="size-pills"><div class="pill active" data-price="15">Small</div><div class="pill" data-price="30">Medium</div><div class="pill" data-price="50">Large</div></div><div class="card-footer"><span class="price-tag">R15</span><button class="btn btn-primary btn-cart add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div></div></div></div></section>
 
-    <section id="contact" class="section"><div class="container"><div class="contact-wrap"><div class="contact-info"><h2 class="title-lg" style="color: white;">Get in <span>Touch</span></h2><p style="margin-bottom: 40px;">Bulk orders or custom requests.</p><div class="contact-item"><div class="contact-icon"><i class="fas fa-phone-volume"></i></div><div><p style="font-size: 0.7rem; color: var(--soft-gold);">Call for Orders</p><p>066 542 4390</p></div></div><div class="contact-item"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div><p style="font-size: 0.7rem; color: var(--soft-gold);">WhatsApp</p><p>061 725 0769</p></div></div></div><div class="contact-form"><form id="contactForm"><div class="form-group"><label>Full Name</label><input type="text" id="contactName" class="form-input" required></div><div class="form-group"><label>Message</label><textarea id="contactMsg" class="form-input" rows="3" required></textarea></div><button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Send Inquiry</button></form></div></div></div></section>
+    <section id="contact" class="section"><div class="container"><div class="contact-wrap"><div class="contact-info"><h2 class="title-lg" style="color: white;">Get in <span>Touch</span></h2><p style="margin-bottom: 40px;">Bulk orders or custom requests.</p><div class="contact-item" style="display: flex; gap: 15px; align-items: center;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fas fa-phone-volume"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">Call for Orders</p><p>066 542 4390</p></div></div><div class="contact-item" style="display: flex; gap: 15px; align-items: center; margin-top:20px;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fab fa-whatsapp"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">WhatsApp</p><p>061 725 0769</p></div></div></div><div class="contact-form"><form id="contactForm"><div class="form-group"><label>Full Name</label><input type="text" id="contactName" class="form-input" required></div><div class="form-group"><label>Message</label><textarea id="contactMsg" class="form-input" rows="3" required></textarea></div><button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Send Inquiry</button></form></div></div></div></section>
 
     <footer style="background: var(--deep-brown); color: white; padding: 40px 0 30px; text-align: center;"><div class="logo" style="color: white;">Kings<span>Atchar</span></div><p style="margin: 20px 0;">© 2026 Kings Atchar. Royal flavor.</p></footer>
 
-    <!-- Cart Modal -->
-    <div class="modal-cart" id="cartModal"><div class="cart-content"><div class="cart-header"><h3><i class="fas fa-shopping-cart"></i> Your Cart</h3><button id="closeCartBtn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer;">&times;</button></div><div class="cart-items" id="cartItemsList"><div class="empty-cart-msg">🛒 Cart is empty</div></div><div class="cart-footer"><div class="cart-total"><span>Total</span><span id="cartTotalPrice">R0</span></div><div id="checkoutFields" style="display: none;"><input type="text" id="checkoutName" class="form-input" placeholder="Full Name *" style="margin-bottom: 12px;"><input type="tel" id="checkoutPhone" class="form-input" placeholder="Phone Number *" style="margin-bottom: 12px;"><textarea id="checkoutAddress" class="form-input" rows="2" placeholder="Delivery address (optional)"></textarea><button id="proceedReceiptBtn" class="btn btn-whatsapp" style="width:100%; margin-top: 12px;"><i class="fab fa-whatsapp"></i> Send Receipt via WhatsApp</button><div class="receipt-actions"><button id="downloadReceiptBtn" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download Receipt</button><button id="shareReceiptBtn" class="btn btn-outline btn-sm"><i class="fas fa-share-alt"></i> Share Receipt</button></div></div><button id="clearCartBtn" class="btn btn-outline" style="width:100%; margin-top: 12px;">Clear Cart</button></div></div></div>
+    <!-- Cart Modal with Payment & Feedback -->
+    <div class="modal-cart" id="cartModal"><div class="cart-content"><div class="cart-header"><h3><i class="fas fa-shopping-cart"></i> Your Cart</h3><button id="closeCartBtn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer;">&times;</button></div><div class="cart-items" id="cartItemsList"><div class="empty-cart-msg">🛒 Cart is empty</div></div><div class="cart-footer" id="cartFooter">
+        <div class="cart-total"><span>Total</span><span id="cartTotalPrice">R0</span></div>
+        
+        <!-- Pre-payment area (order details + payment) -->
+        <div id="prePaymentArea">
+            <input type="text" id="checkoutName" class="form-input" placeholder="Full Name *" style="margin-bottom: 12px;">
+            <input type="tel" id="checkoutPhone" class="form-input" placeholder="Phone Number *" style="margin-bottom: 12px;">
+            <textarea id="checkoutAddress" class="form-input" rows="2" placeholder="Delivery address (optional)"></textarea>
+            
+            <div class="payment-method-group">
+                <div class="payment-title"><i class="fas fa-credit-card"></i> Select Payment Method</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="paymentMethod" value="Cash on Delivery" checked> <i class="fas fa-money-bill-wave"></i> Cash on Delivery</label>
+                    <label><input type="radio" name="paymentMethod" value="Credit/Debit Card"> <i class="fab fa-cc-visa"></i> Card (Demo)</label>
+                    <label><input type="radio" name="paymentMethod" value="Instant EFT"> <i class="fas fa-university"></i> Instant EFT</label>
+                </div>
+            </div>
+            <button id="placeOrderPayBtn" class="btn btn-gold" style="width:100%; margin: 8px 0;"><i class="fas fa-lock"></i> Place Order & Pay</button>
+            <button id="clearCartBtn" class="btn btn-outline" style="width:100%; margin-top: 8px;">Clear Cart</button>
+        </div>
+
+        <!-- Receipt + Feedback area (shown after successful payment) -->
+        <div id="receiptFeedbackArea" style="display: none;">
+            <div class="receipt-actions">
+                <button id="downloadReceiptBtn" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download Receipt</button>
+                <button id="shareReceiptBtn" class="btn btn-outline btn-sm"><i class="fas fa-share-alt"></i> Share Receipt</button>
+                <button id="whatsappReceiptBtn" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Send Receipt</button>
+            </div>
+            <div class="feedback-area">
+                <div style="font-weight:700; margin-bottom:8px;">🍯 Love our atchar? Leave feedback</div>
+                <div class="star-rating" id="starRatingWidget">
+                    <i class="far fa-star star" data-rating="1"></i>
+                    <i class="far fa-star star" data-rating="2"></i>
+                    <i class="far fa-star star" data-rating="3"></i>
+                    <i class="far fa-star star" data-rating="4"></i>
+                    <i class="far fa-star star" data-rating="5"></i>
+                </div>
+                <textarea id="feedbackComment" class="form-input" rows="2" placeholder="Share your experience... (optional)" style="margin: 8px 0;"></textarea>
+                <button id="submitFeedbackBtn" class="btn btn-primary btn-sm" style="width:100%;"><i class="fas fa-smile"></i> Submit Feedback</button>
+            </div>
+        </div>
+    </div></div></div>
 
     <script>
         let cart = [];
+        let lastReceiptSnapshot = null;   // store receipt after payment
+        let orderCompleted = false;
         const whatsappNumber = '27617250769';
         const cartModal = document.getElementById('cartModal');
         const cartItemsContainer = document.getElementById('cartItemsList');
@@ -180,11 +228,17 @@
         const cartIconBtn = document.getElementById('cartIconBtn');
         const closeCartBtn = document.getElementById('closeCartBtn');
         const clearCartBtn = document.getElementById('clearCartBtn');
-        const proceedReceiptBtn = document.getElementById('proceedReceiptBtn');
+        const placeOrderPayBtn = document.getElementById('placeOrderPayBtn');
+        const prePaymentArea = document.getElementById('prePaymentArea');
+        const receiptFeedbackArea = document.getElementById('receiptFeedbackArea');
         const downloadBtn = document.getElementById('downloadReceiptBtn');
         const shareBtn = document.getElementById('shareReceiptBtn');
-        const checkoutFieldsDiv = document.getElementById('checkoutFields');
+        const whatsappReceiptBtn = document.getElementById('whatsappReceiptBtn');
+        const submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+        const starContainer = document.getElementById('starRatingWidget');
+        let selectedRating = 0;
 
+        // helpers
         function showAlert(msg, isError = false) {
             const alertDiv = document.getElementById('customAlert');
             alertDiv.style.display = 'block';
@@ -193,10 +247,29 @@
             setTimeout(() => alertDiv.style.display = 'none', 2500);
         }
 
-        function saveCart() { localStorage.setItem('kingsAtcharCart', JSON.stringify(cart)); renderCartUI(); updateCartBadge(); }
+        function saveCart() { localStorage.setItem('kingsAtcharCart', JSON.stringify(cart)); renderCartUI(); updateCartBadge(); resetOrderStateIfCartChanges(); }
         function updateCartBadge() { cartCountBadge.innerText = cart.reduce((s, i) => s + i.quantity, 0); }
+        
+        function resetOrderStateIfCartChanges() {
+            if(orderCompleted && cart.length > 0) {
+                orderCompleted = false;
+                lastReceiptSnapshot = null;
+                if(prePaymentArea) prePaymentArea.style.display = 'block';
+                if(receiptFeedbackArea) receiptFeedbackArea.style.display = 'none';
+            }
+            if(cart.length === 0 && orderCompleted) {
+                orderCompleted = false;
+                lastReceiptSnapshot = null;
+                if(prePaymentArea) prePaymentArea.style.display = 'block';
+                if(receiptFeedbackArea) receiptFeedbackArea.style.display = 'none';
+            }
+        }
 
         function addToCart(flavor, size, unitPrice) {
+            if(orderCompleted) {
+                showAlert("Previous order completed! Start a fresh cart.", true);
+                return;
+            }
             const existing = cart.find(item => item.flavor === flavor && item.size === size);
             if (existing) existing.quantity += 1;
             else cart.push({ id: Date.now() + Math.random(), flavor, size, unitPrice, quantity: 1 });
@@ -210,27 +283,66 @@
             if(item) { item.quantity += delta; if(item.quantity <= 0) removeItem(id); else saveCart(); }
         }
 
-        function generateReceiptText() {
-            if(cart.length === 0) return null;
-            const name = document.getElementById('checkoutName')?.value.trim() || 'Guest';
-            const phone = document.getElementById('checkoutPhone')?.value.trim() || 'Not provided';
-            const address = document.getElementById('checkoutAddress')?.value.trim() || 'Not provided';
+        function generateReceiptFromCart(cartArray, name, phone, address) {
+            if(!cartArray.length) return null;
             let itemsStr = '';
             let total = 0;
-            cart.forEach(item => {
+            cartArray.forEach(item => {
                 const sub = item.unitPrice * item.quantity;
                 total += sub;
                 itemsStr += `🍛 ${item.flavor} (${item.size}) x${item.quantity} = R${sub}\n`;
             });
             const orderId = `KA${Math.floor(Math.random()*10000)}`;
             const date = new Date().toLocaleString();
-            return `🧾 KINGS ATCHAR RECEIPT 🧾\n━━━━━━━━━━━━━━━━━━━━\nOrder ID: ${orderId}\nDate: ${date}\n\n${itemsStr}\n━━━━━━━━━━━━━━━━━━━━\nTOTAL: R${total}\n\n👤 Customer: ${name}\n📞 Phone: ${phone}\n📍 Address: ${address}\n\nThank you for choosing Kings Atchar! 🥭👑`;
+            return `🧾 KINGS ATCHAR RECEIPT 🧾\n━━━━━━━━━━━━━━━━━━━━\nOrder ID: ${orderId}\nDate: ${date}\n\n${itemsStr}\n━━━━━━━━━━━━━━━━━━━━\nTOTAL: R${total}\n\n👤 Customer: ${name}\n📞 Phone: ${phone}\n📍 Address: ${address || 'Not provided'}\n\nThank you for choosing Kings Atchar! 🥭👑`;
+        }
+
+        function completeOrderAfterPayment(name, phone, address) {
+            if(cart.length === 0) { showAlert("Cart empty", true); return false; }
+            const receiptText = generateReceiptFromCart(cart, name, phone, address);
+            if(!receiptText) return false;
+            lastReceiptSnapshot = receiptText;
+            // clear cart, order completed
+            cart = [];
+            saveCart();  // clears cart UI
+            orderCompleted = true;
+            // Show receipt area, hide pre-payment area
+            prePaymentArea.style.display = 'none';
+            receiptFeedbackArea.style.display = 'block';
+            renderCartUI(); // show empty cart message but with receipt actions visible
+            showAlert(`✅ Payment successful! Order placed. You can now share receipt.`);
+            return true;
+        }
+
+        function simulatePayment(method) {
+            return new Promise((resolve) => {
+                showAlert(`⏳ Processing ${method} payment...`, false);
+                setTimeout(() => {
+                    resolve(true);
+                }, 1200);
+            });
+        }
+
+        async function handlePlaceOrder() {
+            if(cart.length === 0) { showAlert("Your cart is empty", true); return; }
+            const name = document.getElementById('checkoutName').value.trim();
+            const phone = document.getElementById('checkoutPhone').value.trim();
+            if(!name || !phone) { showAlert("Please enter your full name and phone number", true); return; }
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || "Cash on Delivery";
+            
+            await simulatePayment(paymentMethod);
+            const success = completeOrderAfterPayment(name, phone, document.getElementById('checkoutAddress').value.trim());
+            if(success) {
+                // clear the name/phone fields for next order
+                document.getElementById('checkoutName').value = '';
+                document.getElementById('checkoutPhone').value = '';
+                document.getElementById('checkoutAddress').value = '';
+            }
         }
 
         function downloadReceipt() {
-            const receipt = generateReceiptText();
-            if(!receipt) { showAlert('Cart is empty', true); return; }
-            const blob = new Blob([receipt], { type: 'text/plain' });
+            if(!lastReceiptSnapshot) { showAlert("No receipt available. Complete an order first.", true); return; }
+            const blob = new Blob([lastReceiptSnapshot], { type: 'text/plain' });
             const link = document.createElement('a');
             const url = URL.createObjectURL(blob);
             link.href = url;
@@ -243,70 +355,116 @@
         }
 
         function shareReceipt() {
-            const receipt = generateReceiptText();
-            if(!receipt) { showAlert('Cart is empty', true); return; }
+            if(!lastReceiptSnapshot) { showAlert("No receipt found", true); return; }
             if (navigator.share) {
-                navigator.share({ title: 'Kings Atchar Receipt', text: receipt }).catch(err => { if(err.name !== 'AbortError') copyToClipboardFallback(receipt); });
+                navigator.share({ title: 'Kings Atchar Receipt', text: lastReceiptSnapshot }).catch(err => { if(err.name !== 'AbortError') copyToClipboard(lastReceiptSnapshot); });
             } else {
-                copyToClipboardFallback(receipt);
+                copyToClipboard(lastReceiptSnapshot);
             }
         }
 
-        function copyToClipboardFallback(text) {
+        function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => showAlert('📋 Receipt copied! You can paste and share.')).catch(() => showAlert('Could not share', true));
         }
 
-        function sendWhatsAppReceipt() {
-            const name = document.getElementById('checkoutName').value.trim();
-            const phone = document.getElementById('checkoutPhone').value.trim();
-            if(!name || !phone) { showAlert('Please enter your name and phone number', true); return; }
-            if(cart.length === 0) { showAlert('Cart is empty', true); return; }
-            const receipt = generateReceiptText();
-            if(!receipt) return;
-            const encoded = encodeURIComponent(receipt);
+        function sendWhatsappReceipt() {
+            if(!lastReceiptSnapshot) { showAlert("No receipt available", true); return; }
+            const encoded = encodeURIComponent(lastReceiptSnapshot);
             window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, '_blank');
-            showAlert('Receipt sent via WhatsApp!');
-            cart = [];
-            saveCart();
-            document.getElementById('checkoutName').value = '';
-            document.getElementById('checkoutPhone').value = '';
-            document.getElementById('checkoutAddress').value = '';
-            closeCartModal();
+            showAlert('Receipt ready to send via WhatsApp!');
+        }
+
+        function setupStarRating() {
+            const stars = document.querySelectorAll('#starRatingWidget .star');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    selectedRating = rating;
+                    stars.forEach(s => {
+                        const val = parseInt(s.getAttribute('data-rating'));
+                        if(val <= rating) {
+                            s.classList.remove('far');
+                            s.classList.add('fas');
+                            s.style.color = "var(--royal-gold)";
+                        } else {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                            s.style.color = "#ddd";
+                        }
+                    });
+                });
+            });
+        }
+
+        function submitFeedback() {
+            if(selectedRating === 0) { showAlert("Please select a star rating", true); return; }
+            const comment = document.getElementById('feedbackComment').value.trim();
+            const feedbackMsg = `💬 Kings Atchar Feedback\n⭐ Rating: ${selectedRating}/5\n✍️ Comment: ${comment || "No comment"}`;
+            console.log(feedbackMsg);
+            showAlert(`🙏 Thank you! Rating ${selectedRating} star saved. We value your feedback!`);
+            // Optional: send to admin via WhatsApp? but keeping simple for demo
+            document.getElementById('feedbackComment').value = '';
+            selectedRating = 0;
+            const stars = document.querySelectorAll('#starRatingWidget .star');
+            stars.forEach(s => { s.classList.remove('fas'); s.classList.add('far'); s.style.color = "#ddd"; });
         }
 
         function renderCartUI() {
             if(!cartItemsContainer) return;
-            if(cart.length === 0) {
+            if(cart.length === 0 && !orderCompleted) {
                 cartItemsContainer.innerHTML = '<div class="empty-cart-msg">🛒 Your cart is empty. Add some atchar!</div>';
                 cartTotalSpan.innerText = 'R0';
-                checkoutFieldsDiv.style.display = 'none';
+                if(prePaymentArea) prePaymentArea.style.display = 'block';
+                if(receiptFeedbackArea) receiptFeedbackArea.style.display = 'none';
+                return;
+            } 
+            else if(cart.length === 0 && orderCompleted && lastReceiptSnapshot) {
+                cartItemsContainer.innerHTML = '<div class="empty-cart-msg">✅ Order placed! Receipt ready below.</div>';
+                cartTotalSpan.innerText = 'R0';
+                prePaymentArea.style.display = 'none';
+                receiptFeedbackArea.style.display = 'block';
                 return;
             }
-            checkoutFieldsDiv.style.display = 'block';
-            let total = 0;
-            let html = '';
-            cart.forEach(item => {
-                const sub = item.unitPrice * item.quantity;
-                total += sub;
-                html += `<div class="cart-item"><div class="item-details"><div class="item-name">${escapeHtml(item.flavor)}</div><div class="item-meta">${item.size} · R${item.unitPrice}</div></div><div class="item-actions"><div class="qty-control"><button class="qty-minus" data-id="${item.id}">−</button><span>${item.quantity}</span><button class="qty-plus" data-id="${item.id}">+</button></div><button class="remove-item" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button></div><div><strong>R${sub}</strong></div></div>`;
-            });
-            cartItemsContainer.innerHTML = html;
-            cartTotalSpan.innerText = `R${total}`;
-            document.querySelectorAll('.qty-minus').forEach(btn => btn.addEventListener('click', (e) => updateQty(Number(btn.dataset.id), -1)));
-            document.querySelectorAll('.qty-plus').forEach(btn => btn.addEventListener('click', (e) => updateQty(Number(btn.dataset.id), 1)));
-            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', (e) => removeItem(Number(btn.dataset.id))));
+            else if(cart.length > 0 && orderCompleted) {
+                // fallback reset state
+                orderCompleted = false;
+                lastReceiptSnapshot = null;
+                prePaymentArea.style.display = 'block';
+                receiptFeedbackArea.style.display = 'none';
+            }
+            
+            if(cart.length > 0 && !orderCompleted) {
+                prePaymentArea.style.display = 'block';
+                receiptFeedbackArea.style.display = 'none';
+                let total = 0;
+                let html = '';
+                cart.forEach(item => {
+                    const sub = item.unitPrice * item.quantity;
+                    total += sub;
+                    html += `<div class="cart-item"><div class="item-details"><div class="item-name">${escapeHtml(item.flavor)}</div><div class="item-meta">${item.size} · R${item.unitPrice}</div></div><div class="item-actions"><div class="qty-control"><button class="qty-minus" data-id="${item.id}">−</button><span>${item.quantity}</span><button class="qty-plus" data-id="${item.id}">+</button></div><button class="remove-item" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button></div><div><strong>R${sub}</strong></div></div>`;
+                });
+                cartItemsContainer.innerHTML = html;
+                cartTotalSpan.innerText = `R${total}`;
+                document.querySelectorAll('.qty-minus').forEach(btn => btn.addEventListener('click', (e) => updateQty(Number(btn.dataset.id), -1)));
+                document.querySelectorAll('.qty-plus').forEach(btn => btn.addEventListener('click', (e) => updateQty(Number(btn.dataset.id), 1)));
+                document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', (e) => removeItem(Number(btn.dataset.id))));
+            }
         }
+        
         function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
-        function openCartModal() { cartModal.classList.add('active'); document.body.style.overflow = 'hidden'; renderCartUI(); }
+        function openCartModal() { cartModal.classList.add('active'); document.body.style.overflow = 'hidden'; renderCartUI(); setupStarRating(); }
         function closeCartModal() { cartModal.classList.remove('active'); document.body.style.overflow = ''; }
+        
         cartIconBtn.addEventListener('click', openCartModal);
         closeCartBtn.addEventListener('click', closeCartModal);
         cartModal.addEventListener('click', (e) => { if(e.target === cartModal) closeCartModal(); });
-        clearCartBtn.addEventListener('click', () => { if(cart.length && confirm('Clear cart?')) { cart = []; saveCart(); renderCartUI(); showAlert('Cart cleared'); } });
-        proceedReceiptBtn.addEventListener('click', sendWhatsAppReceipt);
+        clearCartBtn.addEventListener('click', () => { if(cart.length && confirm('Clear cart?')) { cart = []; orderCompleted = false; lastReceiptSnapshot = null; saveCart(); renderCartUI(); showAlert('Cart cleared'); prePaymentArea.style.display = 'block'; receiptFeedbackArea.style.display = 'none'; } });
+        placeOrderPayBtn.addEventListener('click', handlePlaceOrder);
         downloadBtn.addEventListener('click', downloadReceipt);
         shareBtn.addEventListener('click', shareReceipt);
-
+        whatsappReceiptBtn.addEventListener('click', sendWhatsappReceipt);
+        submitFeedbackBtn.addEventListener('click', submitFeedback);
+        
         document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const card = btn.closest('.flavor-card');
@@ -317,13 +475,13 @@
                 addToCart(flavor, size, price);
             });
         });
-
+        
         document.querySelectorAll('.flavor-card').forEach(card => {
             const pills = card.querySelectorAll('.pill');
             const priceSpan = card.querySelector('.price-tag');
             pills.forEach(pill => pill.addEventListener('click', () => { pills.forEach(p => p.classList.remove('active')); pill.classList.add('active'); const newPrice = pill.getAttribute('data-price'); if(newPrice && priceSpan) priceSpan.innerText = 'R' + newPrice; }));
         });
-
+        
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -335,7 +493,7 @@
             showAlert('Opened in WhatsApp');
             contactForm.reset();
         });
-
+        
         const saved = localStorage.getItem('kingsAtcharCart');
         if(saved) { try { cart = JSON.parse(saved); } catch(e){} }
         renderCartUI();
