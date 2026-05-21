@@ -166,13 +166,12 @@
         .print-receipt { display: none; }
         .print-receipt.active { display: block; }
         
-        /* Button feedback animation */
         .btn-cart:active { transform: scale(0.95); }
     </style>
 </head>
 <body>  
     <div id="customAlert">✨ Added to cart</div>  
-    <nav class="navbar"><div class="container nav-content"><a href="#" class="logo">Kings<span>Atchar</span></a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#flavors">Flavors</a></li><li><a href="#contact">Contact</a></li></ul><div style="display: flex; gap: 15px;"><div class="cart-icon-wrapper" id="cartIconBtn"><i class="fas fa-shopping-bag" style="font-size: 1.3rem;"></i><span class="cart-count" id="cartCountBadge">0</span></div><a href="tel:0665424390" class="btn btn-outline btn-sm"><i class="fas fa-phone"></i> Call</a></div></div></nav>  
+    <nav class="navbar"><div class="container nav-content"><a href="#" class="logo">Kings<span>Atchar</span></a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#flavors">Flavors</a></li><li><a href="#contact">Contact</a></li></ul><div style="display: flex; gap: 15px;"><div class="cart-icon-wrapper" id="cartIconBtn"><i class="fas fa-shopping-bag" style="font-size: 1.3rem;"></i><span class="cart-count" id="cartCountBadge">0</span></div><a href="tel:0665414390" class="btn btn-outline btn-sm"><i class="fas fa-phone"></i> Call</a></div></div></nav>  
     <section id="home" class="hero"><div class="container hero-content"><div class="hero-tags"><span class="tag"><i class="fas fa-crown"></i> King of Crunch</span><span class="tag"><i class="fas fa-certificate"></i> 100% Homemade</span><span class="tag"><i class="fas fa-truck"></i> Fast Delivery</span></div><h1 class="title-lg">Real Mango. Real Spice.<br><span>Royal Taste.</span></h1><p style="margin-bottom: 35px;">Handcrafted in Venda. Order via WhatsApp, pay via bank transfer. PDF receipt included.</p><div class="hero-actions" style="display: flex; gap: 15px; justify-content: center;"><a href="#flavors" class="btn btn-primary"><i class="fas fa-utensils"></i> Explore Menu</a><a href="https://wa.me/27617250769" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a></div></div></section>  
 
     <section id="flavors" class="section"><div class="container"><div style="text-align: center; margin-bottom: 50px;"><span class="title-sm">Freshly Bottled</span><h2 class="title-lg">Our <span>Signature</span> Lineup</h2></div><div class="flavor-grid" id="flavorGrid">
@@ -190,7 +189,7 @@
         </div>
     </div></div></section>  
 
-    <section id="contact" class="section"><div class="container"><div class="contact-wrap"><div class="contact-info"><h2 class="title-lg" style="color: white;">Get in <span>Touch</span></h2><p style="margin-bottom: 40px;">Bulk orders or custom requests.</p><div class="contact-item" style="display: flex; gap: 15px; align-items: center;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fas fa-phone-volume"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">Call for Orders</p><p>066 542 4390</p></div></div><div class="contact-item" style="display: flex; gap: 15px; align-items: center; margin-top:20px;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fab fa-whatsapp"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">WhatsApp Orders</p><p>066 541 4390</p></div></div></div><div class="contact-form"><form id="contactForm"><div class="form-group"><label>Full Name</label><input type="text" id="contactName" class="form-input" required></div><div class="form-group"><label>Message</label><textarea id="contactMsg" class="form-input" rows="3" required></textarea></div><button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Send Inquiry</button></form></div></div></div></section>  
+    <section id="contact" class="section"><div class="container"><div class="contact-wrap"><div class="contact-info"><h2 class="title-lg" style="color: white;">Get in <span>Touch</span></h2><p style="margin-bottom: 40px;">Bulk orders or custom requests.</p><div class="contact-item" style="display: flex; gap: 15px; align-items: center;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fas fa-phone-volume"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">Call for Orders</p><p>066 541 4390</p></div></div><div class="contact-item" style="display: flex; gap: 15px; align-items: center; margin-top:20px;"><div class="contact-icon" style="background:rgba(255,255,255,0.1); border-radius:16px; padding:12px;"><i class="fab fa-whatsapp"></i></div><div><p style="font-size:0.7rem; color:var(--soft-gold);">WhatsApp Orders</p><p>061 725 0769</p></div></div></div><div class="contact-form"><form id="contactForm"><div class="form-group"><label>Full Name</label><input type="text" id="contactName" class="form-input" required></div><div class="form-group"><label>Message</label><textarea id="contactMsg" class="form-input" rows="3" required></textarea></div><button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Send Inquiry</button></form></div></div></div></section>  
 
     <footer style="background: var(--deep-brown); color: white; padding: 40px 0 30px; text-align: center;"><div class="logo" style="color: white;">Kings<span>Atchar</span></div><p style="margin: 20px 0;">© 2026 Kings Atchar. Royal flavor.</p></footer>  
 
@@ -240,7 +239,7 @@
             let lastOrderData = null;
             let orderCompleted = false;  
             let selectedRating = 0;  
-            const OWNER_WHATSAPP = "2766154390";
+            const OWNER_WHATSAPP = "27617250769"; // 061 725 0769 for orders
 
             const cartModal = document.getElementById('cartModal');
             const cartItemsContainer = document.getElementById('cartItemsList');
@@ -260,16 +259,13 @@
             const flavorGrid = document.getElementById('flavorGrid');
             const printTemplate = document.getElementById('printReceiptTemplate');
 
-            // Enhanced alert with sound feedback (optional beep)
             function showAlert(msg, isError = false) {  
                 const alertDiv = document.getElementById('customAlert');  
                 alertDiv.style.display = 'block';  
                 alertDiv.textContent = msg;  
                 alertDiv.style.borderLeftColor = isError ? '#E64A19' : 'var(--royal-gold)';  
-                // Play subtle beep for added feedback (if supported)
                 try {
                     if(!isError && window.AudioContext) {
-                        // simple beep using Web Audio (optional, won't break if fails)
                         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
                         const oscillator = audioCtx.createOscillator();
                         const gainNode = audioCtx.createGain();
@@ -281,7 +277,7 @@
                         gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.3);
                         oscillator.stop(audioCtx.currentTime + 0.3);
                     }
-                } catch(e) { /* silent fail */ }
+                } catch(e) { }
                 setTimeout(() => alertDiv.style.display = 'none', 2500);  
             }  
 
@@ -322,7 +318,6 @@
                 if (existing) existing.quantity += 1;  
                 else cart.push({ id: Date.now() + Math.random(), flavor, size, unitPrice, quantity: 1 });  
                 saveCart();  
-                // Strong confirmation feedback
                 showAlert(`✓ Added to cart: ${flavor} (${size}) - R${unitPrice}`, false);  
             }  
 
@@ -370,7 +365,7 @@
                         <p><strong>Phone:</strong> ${customerPhone}</p>
                         <p><strong>Delivery Address:</strong> ${address || 'Not provided'}</p>
                         <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
-                            <thead><tr style="background:#F8F4F0;"><th>Item</th><th>Qty</th><th>Unit</th><th>Subtotal</th></tr></thead>
+                            <thead><tr style="background:#F8F4F0;"><th>Item</th><th>Qty</th><th>Unit</th><th>Subtotal</th> </tr></thead>
                             <tbody>${itemsHtml}</tbody>
                             <tfoot><tr><td colspan="3" style="text-align:right; font-weight:bold;">TOTAL</td><td style="font-weight:bold;">R${total}</td></tr></tfoot>
                         </table>
@@ -530,7 +525,6 @@
                 document.body.style.overflow = '';  
             }  
 
-            // Event delegation for add-to-cart (ensures confirmation feedback is shown)
             if(flavorGrid) {
                 flavorGrid.addEventListener('click', (e) => {
                     const addBtn = e.target.closest('.add-to-cart-btn');
@@ -577,7 +571,7 @@
                     const msg = document.getElementById('contactMsg').value.trim();  
                     if(!name || !msg) { showAlert('Fill both fields', true); return; }  
                     const inquiry = `📞 Kings Atchar Inquiry%0A👤 Name: ${name}%0A💬 Message: ${msg}`;  
-                    window.open(`https://wa.me/27617250769?text=${encodeURIComponent(inquiry)}`, '_blank');  
+                    window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(inquiry)}`, '_blank');  
                     showAlert('Opened in WhatsApp', false);  
                     contactForm.reset();  
                 });  
